@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biostudy</title>
+    <!--bootrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</head>
+<!--CSS interno-->
+<style>
+#topo {height: 140px; width: 100%; background-color: #5ccb5f; display: flex; align-items: center; 
+	/* Fixa no topo da tela */ position: fixed; top: 0; left: 0; padding: 15px; font-weight: bold; z-index: 1000; }
+	
+	/* Espaço no conteúdo para não ficar escondido atrás do topo */
+	main {padding-top: 120px; padding-left: 20px; padding-right: 20px; line-height: 1.6;}
+
+    #logo {height: 185px;}
+	
+	#fazerlogin {display: flex; align-items: center;}
+	
+	a {color: black;}
+	
+	/* Estilo padrão */
+	body {background-color: White; color: black; font-family: Arial, sans-serif; width:100%;}
+	
+	button {padding: 10px 20px; margin-bottom: 20px; cursor: pointer;}
+
+	/* Estilo de alto contraste */
+	body.alto-contraste {background-color: #003400;	color: white;}
+	
+	body.alto-contraste button {background-color: white; color: black;}
+
+    #crionsa {width: 100%; display: flex; top: 10px;}
+
+    #conteudo1 {padding-left: 20px; margin: 30px; display: flex; align-items: center;}
+</style>
+
+<body>
+<main>
+    <div id="topo">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!--logo-->
+        <img id="logo" src="logo.png">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!--menu-->
+		<div id="inicio">
+        <a href="#IMG"><h5>Início</h5></a>
+		</div>
+		
+		<!--Dark dropdown 1 & 2-->
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!--1-->
+		<div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Conteudo
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#ctdScrow">Botânica</a></li>
+                <li><a class="dropdown-item" href="#ctdScrow2">Ecologia</a></li>
+            </ul>
+        </div>
+		
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<!--2-->
+		<div class="dropdown" id="exercicios">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Exercícios
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark">
+    <li><a class="dropdown-item" href="#ctdScrow">Botânica</a></li>
+    <li><a class="dropdown-item" href="#ctdScrow2">Ecologia</a></li>
+  </ul>
+</div>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<!--Notícias menu-->
+		<div id="noticias">
+        <a href="#notSCROW"><h5>Notícias</h5></a>
+		</div>
+		
+		<!--Suporte menu-->
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div id="suporte">
+        <a href="#suporteSCROW"><h5>Suporte</h5></a>
+		</div>
+		
+        <!--perfil login-->
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div id="fazerlogin">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle"
+            viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+        </svg>
+		&nbsp;&nbsp;
+        <a href="formulario.html" target="_blank"><h5>Login</h5></a>
+ 	</div>
+	
+	<!--Corpo e imagem da pagina-->
+	<div id="IMG">
+    <img src="crionsa.png" id="crionsa">
+	</div>
+    <br><br><br><br>
+	
+	<!--Sobre nós-->
+      <div id="conteudo1">
+		<div id="titulo1">
+        	<h2>Sobre nós</h2>
+       
+        <!--linha-->
+        <hr id="SobreLine" width="100px" size="5%">
+		
+        <!--texto-->
+        <p>
+		Somos um site dedicado ao incrível mundo da Biologia! <br>Nosso objetivo é compartilhar conhecimentos sobre a vida, os seres vivos e seus processos, de forma claro, acessível e interessante para todos.
+				<br><br>
+			Acreditamos que entender a vida é o primeiro passo para cuidar do planeta. <br>Por isso, nossa missão é levar informações de qualidade para estudantes, ptofessores e curiosos apaixonados pela natureza e pela ciência.
+				<br><br>
+                Seja bem-vindo e explore o universo da biologia conosco!
+            </p>
+			<div class="container">
+				<img src="img435271341.jpeg" alt="Imagem">
+			</div>
+    </div>
+</div>
+</main>
+</body>	
+</html>

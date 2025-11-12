@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Biologia - Cadeia e Teia Alimentar</title>
+  <style>
+body{font-family:Arial,sans-serif;padding:20px;background-color:#003400}.quiz-container{background:#fff;padding:20px;border-radius:10px;max-width:600px;margin:auto;box-shadow:0 0 10px rgba(0,0,0,.1)}.volta,button{padding:10px 15px;background-color:#07c;color:#fff}h1{text-align:center}.question{margin:20px 0}.answer{margin:10px 0}#result{margin-top:20px;font-weight:700;color:green}button{border:none;border-radius:5px;cursor:pointer}.volta:hover,button:hover{background-color:#005fa3}.volta{display:inline-block;border:none;border-radius:5px;text-decoration:none;margin-bottom:20px}
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+<a href="site.jarlison.html" class="volta">Voltar à página principal</a>
+
+    <h1>Exercício sobre o fluxo de enegia</h1>
+    <p><strong>Questão 1:</strong>O que garante o início do ciclo da água?:</p>
+
+    <div class="answer"><input type="radio" name="q1" value="a"> a) Ação das bactérias</div>
+    <div class="answer"><input type="radio" name="q1" value="b"> b) Decomposição da matéria orgânica</div>
+    <div class="answer"><input type="radio" name="q1" value="c"> c) Energia solar </div>
+    <div class="answer"><input type="radio" name="q1" value="d"> d) Movimento da gravidade</div>
+
+    <button onclick="verResposta()">Ver resposta</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function verResposta() {
+      const respostaCerta = "c";
+      const opcoes = document.getElementsByName("q1");
+      let selecionada = "";
+
+      for (const opcao of opcoes) {
+        if (opcao.checked) {
+          selecionada = opcao.value;
+          break;
+        }
+      }
+
+      const resultado = document.getElementById("result");
+      if (selecionada === "") {
+        resultado.textContent = "Por favor, selecione uma resposta.";
+        resultado.style.color = "red";
+      } else if (selecionada === respostaCerta) {
+        resultado.textContent = "Correto! A alternativa C é a certa.";
+        resultado.style.color = "green";
+      } else {
+        resultado.textContent = "Incorreto. A resposta correta é a letra C.";
+        resultado.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

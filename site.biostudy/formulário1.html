@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --color-white: #fff;
+            --color-red: #e63636;
+            --color-dark1: #181818;
+            --color-dark2: #1e1e1e;
+            --color-purple1: #9333FF;
+            --color-purple2: indigo;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--color-white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .topo {
+            width: 100%;
+            height: 100px;
+            background-color: #7D9474;
+            color: black;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            position: fixed;
+            top: 0px;
+        }
+
+        .conteudo {
+            background-color: #F5F5E8;
+            padding: 32px;
+            border-radius: 20px;
+            width: 50%;
+            color: var(--color-dark1);
+            text-align: center;
+        }
+
+        .conteudo input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .conteudo button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #7D9474;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .span {
+            display: none;
+            font-size: 12px;
+            color: var(--color-red);
+            margin: 3px 0 0 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="topo">
+        <h2>BIOSTUDY</h2>
+    </div>
+
+    <div class="conteudo">
+        <h1>BEM-VINDO AO BIOSTUDY</h1>
+        <br>
+        <h4>Insira seus dados para acessar a plataforma</h4>
+        <!-- Formulário -->
+        <form id="form">
+            <!-- Email -->
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+                <input type="text" placeholder="Digite seu email" class="inputs required" oninput="emailValidate()">
+                <span class="span">Digite um email válido</span>
+            </div>
+
+            <!-- Senha -->
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0c1.07 0 2.041.42 2.759 1.104l.14.14.062.08a.5.5 0 0 1-.71.675l-.076-.066-.216-.205A3 3 0 0 0 5 4v2h6.5A2.5 2.5 0 0 1 14 8.5v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4M4.5 7A1.5 1.5 0 0 0 3 8.5v5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 11.5 7z"/>
+                </svg>
+                <input type="password" placeholder="Senha" class="inputs required" oninput="senhaValidate()">
+                <span class="span">Digite uma senha com no mínimo 6 caracteres</span>
+            </div>
+
+            <!-- Esqueci minha senha -->
+          <div style="text-align: right; margin-top: 5px; margin-bottom: 10px;">
+              <center><a href="#" id="esqueciSenha" style="font-size: 0.9em;">Esqueci minha senha</a> </center>
+            </div>
+
+            <a target="_blank" href="file:///C:/Users/kemil/Downloads/Pasta%20jos%C3%A9%20%3B)/formul%C3%A1rios2.html">
+                <button type="submit">Avançar</button>
+            </a>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('form');
+        const campos = document.querySelectorAll('.required');
+        const spans = document.querySelectorAll('span');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let ultimaSenha = ''; // <-- aqui guardamos a última senha digitada
+
+        function setError(index) {
+            campos[index].style.border = '2px solid #e63636';
+            spans[index].style.display = 'block';
+        }
+
+        function setSuccess(index) {
+            campos[index].style.border = '2px solid green';
+            spans[index].style.display = 'none';
+        }
+
+        function emailValidate() {
+            if (emailRegex.test(campos[0].value)) {
+                setSuccess(0);
+            } else {
+                setError(0);
+            }
+        }
+
+        function senhaValidate() {
+            const senha = campos[1].value;
+
+            if (senha.length >= 6) {
+                setSuccess(1);
+            } else {
+                setError(1);
+            }
+
+            // Atualiza a última senha se não estiver vazia
+            if (senha !== '') {
+                ultimaSenha = senha;
+            }
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            emailValidate();
+            senhaValidate();
+
+            const emailValido = emailRegex.test(campos[0].value);
+            const senhaValida = campos[1].value.length >= 6;
+
+            if (emailValido && senhaValida) {
+                window.location.href = 'trabalho-continuacao.html';
+            }
+        });
+
+        // Evento do botão "Esqueci minha senha"
+        document.getElementById('esqueciSenha').addEventListener('click', function (event) {
+            event.preventDefault();
+            if (ultimaSenha !== '') {
+                alert("Sua senha anterior era: " + ultimaSenha);
+            } else {
+                alert("Você ainda não digitou nenhuma senha!");
+            }
+        });
+    </script>
+</body>
+</html>
